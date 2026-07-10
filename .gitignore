@@ -5,3 +5,4 @@ build_distrib/temp
 
 # ignore EEZ Studio state files
 **/*.eez-project-ui-state
+source/main/ui_generated_800x480land/.eez-project-build

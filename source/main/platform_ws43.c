@@ -78,7 +78,7 @@ limitations under the License.
 static const char *TAG = "platform_ws43b";
 
 // LCD panel config
-#define DISPLAY_LCD_PIXEL_CLOCK_HZ     (14500000)
+#define DISPLAY_LCD_PIXEL_CLOCK_HZ     (13100000)      // 13 Mhz gets offset, 14 Mhz gets DMA underruns when amp skin changed (V2.0.2.2b2 known-good, fixes 4.3B frame offset)
 #define DISPLAY_LCD_BK_LIGHT_ON_LEVEL  1
 #define DISPLAY_LCD_BK_LIGHT_OFF_LEVEL !DISPLAY_LCD_BK_LIGHT_ON_LEVEL
 
@@ -340,8 +340,8 @@ void platform_init(i2c_master_bus_handle_t bus_handle, SemaphoreHandle_t I2CMute
             .hsync_back_porch  = 8,
             .hsync_front_porch = 8,
             .vsync_pulse_width = 4,
-            .vsync_back_porch  = 45,   // these 2 values critical. Too small gets ghosting/flicker at higher pixel clock values
-            .vsync_front_porch = 45,       
+            .vsync_back_porch  = 16,   // V2.0.2.2b2 known-good with 13.1MHz pclk: fixes 4.3B frame offset without flicker
+            .vsync_front_porch = 16,
             .flags = {
                 .hsync_idle_low   = 0,
                 .vsync_idle_low   = 0,

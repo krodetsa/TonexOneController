@@ -20,40 +20,11 @@ idf_component_register(SRCS "platform_pirate_pro_169.c" "platform_pirate_max35.c
 if(CONFIG_TONEX_CONTROLLER_HARDWARE_PLATFORM_WAVESHARE_43B OR CONFIG_TONEX_CONTROLLER_HARDWARE_PLATFORM_WAVESHARE_43DEVONLY)
     target_include_directories(${COMPONENT_LIB} PRIVATE include "ui_generated_800x480land")
 
-    target_sources(${COMPONENT_LIB} PRIVATE "ui_generated_800x480land/ui.c" "ui_generated_800x480land/styles.c"
-                           "ui_generated_800x480land/screens.c" "ui_generated_800x480land/images.c"
-                           "ui_generated_800x480land/ui_image_smythbuilt.c"
-			                  "ui_generated_800x480land/ui_image_usb_fail.c" "ui_generated_800x480land/ui_image_next.c" "ui_generated_800x480land/ui_image_previous.c" 
-                           "ui_generated_800x480land/ui_image_usb_ok.c" "ui_generated_800x480land/ui_image_next_down.c" "ui_generated_800x480land/ui_image_previous_down.c" "ui_generated_800x480land/ui_image_settings.c"
-                           "ui_generated_800x480land/ui_image_wifi_conn.c" "ui_generated_800x480land/ui_image_wifi_disconn.c"
-                           "ui_generated_800x480land/ui_image_effect_icon_amp_off.c" "ui_generated_800x480land/ui_image_effect_icon_amp_on.c" 
-                           "ui_generated_800x480land/ui_image_effect_icon_cab_off.c" "ui_generated_800x480land/ui_image_effect_icon_cab_on.c" 
-                           "ui_generated_800x480land/ui_image_effect_icon_comp_off.c" "ui_generated_800x480land/ui_image_effect_icon_comp_on.c" 
-                           "ui_generated_800x480land/ui_image_effect_icon_delay_off.c" "ui_generated_800x480land/ui_image_effect_icon_delay_on.c" 
-                           "ui_generated_800x480land/ui_image_effect_icon_gate_off.c" "ui_generated_800x480land/ui_image_effect_icon_gate_on.c" 
-                           "ui_generated_800x480land/ui_image_effect_icon_mod_off.c" "ui_generated_800x480land/ui_image_effect_icon_mod_on.c" 
-                           "ui_generated_800x480land/ui_image_effect_icon_mod_on_chorus.c" "ui_generated_800x480land/ui_image_effect_icon_mod_on_flanger.c" 
-                           "ui_generated_800x480land/ui_image_effect_icon_mod_on_phaser.c" "ui_generated_800x480land/ui_image_effect_icon_mod_on_rotary.c" 
-                           "ui_generated_800x480land/ui_image_effect_icon_mod_on_tremolo.c" 
-                           "ui_generated_800x480land/ui_image_effect_icon_reverb_off.c" "ui_generated_800x480land/ui_image_effect_icon_reverb_on.c" 
-                           "ui_generated_800x480land/ui_image_effect_icon_reverb_on_r.c" "ui_generated_800x480land/ui_image_effect_icon_reverb_on_s1.c" 
-                           "ui_generated_800x480land/ui_image_effect_icon_reverb_on_s2.c" "ui_generated_800x480land/ui_image_effect_icon_reverb_on_s3.c" 
-                           "ui_generated_800x480land/ui_image_effect_icon_reverb_on_s4.c" "ui_generated_800x480land/ui_image_effect_icon_reverb_on_p.c" 
-                           "ui_generated_800x480land/ui_image_effect_icon_delay_on_d.c" "ui_generated_800x480land/ui_image_effect_icon_delay_on_t.c" 
-                           "ui_generated_800x480land/ui_image_effect_icon_eq.c"
-                           "ui_generated_800x480land/ui_image_arrow_left.c" "ui_generated_800x480land/ui_image_arrow_right.c" "ui_generated_800x480land/ui_image_tick.c"
-                           "ui_generated_800x480land/ui_image_bt_conn.c" "ui_generated_800x480land/ui_image_bt_disconn.c"
-                           "ui_generated_800x480land/ui_image_eq_off.c" "ui_generated_800x480land/ui_image_eq_on.c"
-                           "ui_generated_800x480land/ui_image_mod_off.c" "ui_generated_800x480land/ui_image_mod_on.c"
-                           "ui_generated_800x480land/ui_image_pre_off.c" "ui_generated_800x480land/ui_image_pre_on.c"
-                           "ui_generated_800x480land/ui_image_nr_off.c" "ui_generated_800x480land/ui_image_nr_on.c"
-                           "ui_generated_800x480land/ui_image_rvb_off.c" "ui_generated_800x480land/ui_image_rvb_on.c"
-                           "ui_generated_800x480land/ui_image_tc_off.c" "ui_generated_800x480land/ui_image_tc_on.c"
-                           "ui_generated_800x480land/ui_image_amp_off.c" "ui_generated_800x480land/ui_image_amp_on.c" "ui_generated_800x480land/ui_image_amp_disabled.c"
-                           "ui_generated_800x480land/ui_image_dly_off.c" "ui_generated_800x480land/ui_image_dly_on.c"
-                           "ui_generated_800x480land/ui_image_dst_off.c" "ui_generated_800x480land/ui_image_dst_on.c"
-                           "ui_generated_800x480land/ui_image_cab_off.c" "ui_generated_800x480land/ui_image_cab_on.c" "ui_generated_800x480land/ui_image_cab_disabled.c"
-                           "ui_generated_800x480land/ui_image_skin_jcm.c")
+    # New mint 800x480 design (ported from CustomUI fork). Glob picks up
+    # screens.c, images, all ui_image_*.c / ui_font_*.c, screens_compat.c, vars.c
+    # so EEZ regen with different asset names does not break the build.
+    file(GLOB UI_800_SOURCES "ui_generated_800x480land/*.c")
+    target_sources(${COMPONENT_LIB} PRIVATE ${UI_800_SOURCES})
 endif()
 
 if(CONFIG_TONEX_CONTROLLER_HARDWARE_PLATFORM_WAVESHARE_35B OR CONFIG_TONEX_CONTROLLER_HARDWARE_PLATFORM_JC3248W535 OR CONFIG_TONEX_CONTROLLER_HARDWARE_PLATFORM_PIRATE_MIDI_POLAR_MAX_V2)
