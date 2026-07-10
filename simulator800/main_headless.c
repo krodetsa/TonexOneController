@@ -43,6 +43,13 @@ int main(int argc, char **argv)
 
     ui_init();
 
+    /* optional 2nd arg: screen id (1=Screen1, 2=Settings, 3=ValSettings).
+       Direct load (no fade anim) to avoid anim-timer issues headless. */
+    if (argc > 2) {
+        lv_obj_t *scr = ((lv_obj_t **)&objects)[atoi(argv[2]) - 1];
+        if (scr) lv_scr_load(scr);
+    }
+
     /* let the 200ms fade-in + layout settle */
     for (int i = 0; i < 40; i++) {
         lv_tick_inc(16);
