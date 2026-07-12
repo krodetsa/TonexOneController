@@ -2,7 +2,7 @@
 
 A restyled "mint" user interface for the **Waveshare ESP32-S3 4.3B (800×480)**, ported from the 480×320 CustomUI design onto the 4.3B and wired to live pedal data. This is a fork of [Builty/TonexOneController](https://github.com/Builty/TonexOneController).
 
-![Mint UI — main screen](docs/mint_ui_main.png)
+<img width="884" height="533" alt="image" src="https://github.com/user-attachments/assets/450f0bcf-0121-4717-b628-0edfbcb40e4b" />
 
 > The screenshot above is a render from the built-in PC simulator (`simulator800/`), so it shows placeholder text; on the device the preset number, name, BPM and effect states are filled in live from the pedal.
 
