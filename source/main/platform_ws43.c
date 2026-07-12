@@ -198,17 +198,19 @@ __attribute__((unused)) void platform_get_icon_coords(int16_t* dest, uint8_t max
         case AMP_MODELLER_TONEX:        // fallthrough    
         default:
         {
-            // Tonex
+            // Tonex — X positions of the 8 signal-chain icon slots, matching
+            // the 800x480 mint layout in ui_generated_800x480land/screens.c
+            // (EQ, Gate, Amp, Cab, Comp, Mod, Delay, Reverb, left to right).
             if (max_entries <= 8)
             {
-                dest[0] = -4;
-                dest[1] = 85;
-                dest[2] = 170;
-                dest[3] = 255;
-                dest[4] = 340;
-                dest[5] = 425;
-                dest[6] = 505;
-                dest[7] = 590;
+                dest[0] = -23;
+                dest[1] = 77;
+                dest[2] = 177;
+                dest[3] = 277;
+                dest[4] = 377;
+                dest[5] = 476;
+                dest[6] = 576;
+                dest[7] = 676;
             }
         } break;
 

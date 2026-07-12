@@ -470,8 +470,8 @@ void create_screen_screen1() {
                     // ui_BottomPanelTonex
                     lv_obj_t *obj = lv_obj_create(parent_obj);
                     objects.ui_bottom_panel_tonex = obj;
-                    lv_obj_set_pos(obj, 1, 306);
-                    lv_obj_set_size(obj, 800, 65);
+                    lv_obj_set_pos(obj, 0, 284);
+                    lv_obj_set_size(obj, 800, 104);
                     lv_obj_clear_flag(obj, LV_OBJ_FLAG_SCROLLABLE);
                     lv_obj_set_style_radius(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
                     lv_obj_set_style_bg_opa(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -482,9 +482,11 @@ void create_screen_screen1() {
                             // ui_IconReverb
                             lv_obj_t *obj = lv_img_create(parent_obj);
                             objects.ui_icon_reverb = obj;
-                            lv_obj_set_pos(obj, 683, -18);
-                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_obj_set_pos(obj, 676, -22);
+                            lv_obj_set_size(obj, 100, 104);
                             lv_img_set_src(obj, &img_effect_icon_reverb_off);
+                            lv_img_set_zoom(obj, 440);
+                            lv_img_set_size_mode(obj, LV_IMG_SIZE_MODE_REAL);
                             lv_obj_add_event_cb(obj, action_effect_icon_clicked, LV_EVENT_LONG_PRESSED, (void *)0);
                             lv_obj_add_event_cb(obj, action_effect_icon_clicked, LV_EVENT_SHORT_CLICKED, (void *)0);
                             lv_obj_add_flag(obj, LV_OBJ_FLAG_CLICKABLE);
@@ -493,9 +495,11 @@ void create_screen_screen1() {
                             // ui_IconDelay
                             lv_obj_t *obj = lv_img_create(parent_obj);
                             objects.ui_icon_delay = obj;
-                            lv_obj_set_pos(obj, 588, -18);
-                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_obj_set_pos(obj, 576, -22);
+                            lv_obj_set_size(obj, 100, 104);
                             lv_img_set_src(obj, &img_effect_icon_delay_off);
+                            lv_img_set_zoom(obj, 440);
+                            lv_img_set_size_mode(obj, LV_IMG_SIZE_MODE_REAL);
                             lv_obj_add_event_cb(obj, action_effect_icon_clicked, LV_EVENT_LONG_PRESSED, (void *)0);
                             lv_obj_add_event_cb(obj, action_effect_icon_clicked, LV_EVENT_SHORT_CLICKED, (void *)0);
                             lv_obj_add_flag(obj, LV_OBJ_FLAG_CLICKABLE);
@@ -504,9 +508,11 @@ void create_screen_screen1() {
                             // ui_IconMod
                             lv_obj_t *obj = lv_img_create(parent_obj);
                             objects.ui_icon_mod = obj;
-                            lv_obj_set_pos(obj, 493, -18);
-                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_obj_set_pos(obj, 476, -22);
+                            lv_obj_set_size(obj, 100, 104);
                             lv_img_set_src(obj, &img_effect_icon_mod_off);
+                            lv_img_set_zoom(obj, 440);
+                            lv_img_set_size_mode(obj, LV_IMG_SIZE_MODE_REAL);
                             lv_obj_add_event_cb(obj, action_effect_icon_clicked, LV_EVENT_LONG_PRESSED, (void *)0);
                             lv_obj_add_event_cb(obj, action_effect_icon_clicked, LV_EVENT_SHORT_CLICKED, (void *)0);
                             lv_obj_add_flag(obj, LV_OBJ_FLAG_CLICKABLE);
@@ -515,9 +521,11 @@ void create_screen_screen1() {
                             // ui_IconComp
                             lv_obj_t *obj = lv_img_create(parent_obj);
                             objects.ui_icon_comp = obj;
-                            lv_obj_set_pos(obj, 398, -18);
-                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_obj_set_pos(obj, 377, -22);
+                            lv_obj_set_size(obj, 100, 104);
                             lv_img_set_src(obj, &img_effect_icon_comp_off);
+                            lv_img_set_zoom(obj, 440);
+                            lv_img_set_size_mode(obj, LV_IMG_SIZE_MODE_REAL);
                             lv_obj_add_event_cb(obj, action_effect_icon_clicked, LV_EVENT_LONG_PRESSED, (void *)0);
                             lv_obj_add_event_cb(obj, action_effect_icon_clicked, LV_EVENT_SHORT_CLICKED, (void *)0);
                             lv_obj_add_flag(obj, LV_OBJ_FLAG_CLICKABLE);
@@ -526,9 +534,11 @@ void create_screen_screen1() {
                             // ui_IconCab
                             lv_obj_t *obj = lv_img_create(parent_obj);
                             objects.ui_icon_cab = obj;
-                            lv_obj_set_pos(obj, 303, -18);
-                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_obj_set_pos(obj, 277, -22);
+                            lv_obj_set_size(obj, 100, 104);
                             lv_img_set_src(obj, &img_effect_icon_cab_off);
+                            lv_img_set_zoom(obj, 440);
+                            lv_img_set_size_mode(obj, LV_IMG_SIZE_MODE_REAL);
                             lv_obj_add_event_cb(obj, action_effect_icon_clicked, LV_EVENT_LONG_PRESSED, (void *)0);
                             lv_obj_add_event_cb(obj, action_effect_icon_clicked, LV_EVENT_SHORT_CLICKED, (void *)0);
                             lv_obj_add_flag(obj, LV_OBJ_FLAG_CLICKABLE);
@@ -537,9 +547,11 @@ void create_screen_screen1() {
                             // ui_IconAmp
                             lv_obj_t *obj = lv_img_create(parent_obj);
                             objects.ui_icon_amp = obj;
-                            lv_obj_set_pos(obj, 208, -18);
-                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_obj_set_pos(obj, 177, -22);
+                            lv_obj_set_size(obj, 100, 104);
                             lv_img_set_src(obj, &img_effect_icon_amp_off);
+                            lv_img_set_zoom(obj, 440);
+                            lv_img_set_size_mode(obj, LV_IMG_SIZE_MODE_REAL);
                             lv_obj_add_event_cb(obj, action_effect_icon_clicked, LV_EVENT_LONG_PRESSED, (void *)0);
                             lv_obj_add_event_cb(obj, action_effect_icon_clicked, LV_EVENT_SHORT_CLICKED, (void *)0);
                             lv_obj_add_flag(obj, LV_OBJ_FLAG_CLICKABLE);
@@ -548,9 +560,11 @@ void create_screen_screen1() {
                             // ui_IconGate
                             lv_obj_t *obj = lv_img_create(parent_obj);
                             objects.ui_icon_gate = obj;
-                            lv_obj_set_pos(obj, 113, -18);
-                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_obj_set_pos(obj, 77, -22);
+                            lv_obj_set_size(obj, 100, 104);
                             lv_img_set_src(obj, &img_effect_icon_gate_off);
+                            lv_img_set_zoom(obj, 440);
+                            lv_img_set_size_mode(obj, LV_IMG_SIZE_MODE_REAL);
                             lv_obj_add_event_cb(obj, action_effect_icon_clicked, LV_EVENT_LONG_PRESSED, (void *)0);
                             lv_obj_add_event_cb(obj, action_effect_icon_clicked, LV_EVENT_SHORT_CLICKED, (void *)0);
                             lv_obj_add_flag(obj, LV_OBJ_FLAG_CLICKABLE);
@@ -559,9 +573,11 @@ void create_screen_screen1() {
                             // ui_IconEQ
                             lv_obj_t *obj = lv_img_create(parent_obj);
                             objects.ui_icon_eq = obj;
-                            lv_obj_set_pos(obj, 18, -18);
-                            lv_obj_set_size(obj, 57, LV_SIZE_CONTENT);
+                            lv_obj_set_pos(obj, -23, -22);
+                            lv_obj_set_size(obj, 100, 104);
                             lv_img_set_src(obj, &img_effect_icon_eq);
+                            lv_img_set_zoom(obj, 440);
+                            lv_img_set_size_mode(obj, LV_IMG_SIZE_MODE_REAL);
                             lv_obj_add_event_cb(obj, action_effect_icon_clicked, LV_EVENT_SHORT_CLICKED, (void *)0);
                             lv_obj_add_event_cb(obj, action_effect_icon_clicked, LV_EVENT_LONG_PRESSED, (void *)0);
                             lv_obj_add_flag(obj, LV_OBJ_FLAG_CLICKABLE);
@@ -734,8 +750,8 @@ void create_screen_screen1() {
                     // ui_ProjectHeadingLabel_6
                     lv_obj_t *obj = lv_label_create(parent_obj);
                     objects.ui_project_heading_label_6 = obj;
-                    lv_obj_set_pos(obj, 651, 268);
-                    lv_obj_set_size(obj, 111, 28);
+                    lv_obj_set_pos(obj, 674, 236);
+                    lv_obj_set_size(obj, 111, 32);
                     lv_obj_clear_flag(obj, LV_OBJ_FLAG_SCROLLABLE|LV_OBJ_FLAG_SCROLL_CHAIN_HOR|LV_OBJ_FLAG_SCROLL_CHAIN_VER|LV_OBJ_FLAG_SCROLL_ELASTIC|LV_OBJ_FLAG_SCROLL_MOMENTUM|LV_OBJ_FLAG_SCROLL_WITH_ARROW);
                     lv_obj_set_style_text_color(obj, lv_color_hex(0x6ed8bf), LV_PART_MAIN | LV_STATE_DEFAULT);
                     lv_obj_set_style_text_font(obj, &ui_font_anton_14, LV_PART_MAIN | LV_STATE_DEFAULT);
